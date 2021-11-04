@@ -1,24 +1,17 @@
-# README
+STORE 🛒
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Desarrollar un software web que permita recibir pedidos por internet.
 
-Things you may want to cover:
+FUNCIONALIDADES
 
-* Ruby version
+Definir una aplicación que permita tener un administrador:
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  CRUD Categories
+  CRUD Products
+  CRUD Role
+  CRUD Users (OPT)
+  
+Mostrar los productos como si fuera un catálogo:
+Crear carritos de compras
+Crear un pedido desde el cliente
+Enviar un correo de confirmación al cliente sobre el pedido realizado
