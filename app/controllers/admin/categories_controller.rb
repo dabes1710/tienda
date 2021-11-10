@@ -1,7 +1,8 @@
 class Admin::CategoriesController < ApplicationController
-
-  before_action :set_category, only: [:show, :edit, :update, :delete]
-
+  
+  layout 'admin_layout'
+  before_action :set_category, only: [:show, :edit, :update, :destroy]
+  
   def index
     @categories = Category.all
   end
@@ -18,7 +19,7 @@ class Admin::CategoriesController < ApplicationController
 
   def create
     @category = Category.new(params_category)
-    if @category
+    if @category.save
       redirect_to admin_categories_path
     else
       render :new
@@ -49,6 +50,6 @@ class Admin::CategoriesController < ApplicationController
     # el flash es como el mensajero de rails
     flash[:set_category_error] = "Could not find the record #{params[:id]}"
     redirect_to admin_categories_path
-  end  
-  
+  end
+
 end
