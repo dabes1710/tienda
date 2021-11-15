@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
  # pages
-  get 'pages/home'
+  root'pages#home'
   namespace :admin do
     # Categories
   #VERB     URI                       RESPONSABLE           ALIAS

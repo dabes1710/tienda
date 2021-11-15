@@ -5,8 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Status.create([
+    { description: 'Accepted' },
+    { description: 'Rejected' },
+    { description: 'Canceled' },
+    { description: 'Delivered' },
+    { description: 'Authorized' }
+])
+puts "💾 Statutes loaded!"
 # Save data for Category
-Category.create([
+@categories = Category.create([
     { name: 'Food' },
     { name: 'Meat' },
     { name: 'Beer' },
@@ -24,3 +33,8 @@ User.create([
     { username: 'admin', password: 'admin', password_confirmation: 'admin', role: Role.find_by(name: 'Admin') }
 ])
 puts "💾 Users loaded!"
+
+25.times do
+    Product.create(name: Faker::Food.dish, description: Faker::Food.description, price: rand(10000..50000), category: @categories.sample)
+end
+puts "💾 Products loaded!"
